@@ -1,45 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const pageTitle = "Adam Flitney";
-
-const identity = {
-  firstName: "Adam",
-  country: "UK",
-  occupation: "Software Engineer",
-  hobbies: ["watching anime", "reading", "coding", "playing WoW"],
-};
-
-const technicalSkills = [
-  "HTML",
-  "CSS",
-  "Javascript",
-  "Typescript",
-  "React",
-  "NodeJS",
-  "AWS",
-];
-
-const happy = true;
-const finished = true;
-const goal = 3;
-
-const skillColor = "white";
-const fontWeight = "bold";
-const textCase = "uppercase";
 ---
 
 <BaseLayout>
   <div class="container">
     <main class="about-me">
-      <h1>Adam Flitney</h1>
+    <article class="about-me__content">
       <p class="quote">
         "A jack of all trades is a master of none, but oftentimes better than a
         master of one"
       </p>
       <p class="quote-source">- Some amazing person</p>
       <p>
-        I'm an experienced senior full-stack software engineer with a passion
+        Hi! I'm Adam and I'm an experienced full-stack software engineer with a passion
         for problem solving and personal development.
       </p>
 
@@ -48,42 +21,38 @@ const textCase = "uppercase";
         saw astro being used on a learnWithJason youtube video, I've been
         enchanted by its simple yet powerful approach to web development.
       </p>
-    </main>
-    <div class="me-pic">
+    </article>
+      <div class="me-pic">
       <img src="/my-avatar.svg" alt="a stylized avatar of me" />
     </div>
+    </main>
+    
   </div>
 </BaseLayout>
 
-<style define:vars={{ skillColor, fontWeight, textCase }}>
+<style>
   .container {
+    height: 100%;
     display: grid;
-    grid-template-columns: minmax(0px, 10vw) 1fr 1fr 1fr minmax(0px, 10vw);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 0px;
-  }
-  main {
-    grid-area: 1 / 2 / 5 / 4;
-    font-size: 2rem;
+    place-items: center;
+
   }
 
-  .me-pic {
-    grid-area: 1 / 4 / 2 / 5;
+  main {
+    display: flex;
+    gap: max(50px, 10vw);
+    max-width: max(300px, 80%);
   }
+
+  article {
+    max-width: max(200px, 80%);
+  }
+
   .quote {
     font-weight: bold;
     font-style: italic;
-    margin-bottom: 0;
   }
   .quote-source {
-    margin-bottom: inherit;
-    margin-top: 0;
     color: rgb(202, 202, 202);
-  }
-  .skill {
-    color: var(--skillColor);
-    font-weight: var(--fontWeight);
-    text-transform: var(--textCase);
   }
 </style>
