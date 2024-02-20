@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <div class="container">
+    <main class="about-me">
+      <div class="me-pic">
+        <img src="/avatar-with-glasses.svg" alt="a stylized avatar of me" />
+      </div>
+    <article class="content">
+        <h1>Woops!!</h1>
+      <p>
+        Looks like you've stumbled upon a page that doesn't exist... 
+      </p>
+      <p>...or is so secret, even I can't access it!</p>
+    </article>
+      
+    </main>
+    
+  </div>
+</BaseLayout>
+
+<style>
+  .container {
+    height: 100%;
+    display: grid;
+    place-items: center;
+
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    max-width: max(300px, 80%);
+    align-items: center;
+  }
+
+  article {
+    background-color: rgb(119, 119, 119);
+    border-radius: 10px;
+    padding: 2rem 3rem;
+    font-size: 2rem;
+  }
+
+  .quote {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.5rem;
+  }
+  .quote-source {
+    color: rgb(202, 202, 202);
+  }
+
+  .me-pic > img {
+    margin-top: 1rem;
+    display: block;
+  }
+</style>

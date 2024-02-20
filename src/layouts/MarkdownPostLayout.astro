@@ -5,13 +5,17 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <p transition:animate={fade({ duration: "2s" })}>
-    <em>{frontmatter.description}</em>
-  </p>
-  <p>Written by: <a href="/about/">{frontmatter.author}</a></p>
-  <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-  <div class="tags">
+  <div class="frontmatter">
+    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    <h1 transition:animate={fade({ duration: "2s" })}>
+      <em>{frontmatter.description}</em>
+    </h1>
+    <p>Written by: <a href="/about/">{frontmatter.author}</a></p>
+    <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
+    
+  </div>
+  
+  <!-- <div class="tags">
     {
       frontmatter.tags.map((tag: string) => (
         <p class="tag">
@@ -19,18 +23,21 @@ const { frontmatter } = Astro.props;
         </p>
       ))
     }
-  </div>
+  </div> -->
   <slot />
 </BaseLayout>
 
 <style>
-  a {
-    color: #00539f;
+
+
+  .frontmatter {
+    margin-bottom: 3rem;
   }
 
-  .tags {
+  /* .tags {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 3rem;
   }
 
   .tag {
@@ -40,5 +47,5 @@ const { frontmatter } = Astro.props;
     padding: 0.5em 1em;
     font-size: 1.15em;
     background-color: #f8fcfd;
-  }
+  } */
 </style>

@@ -11,14 +11,24 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/my-avatar.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="color-scheme" content="dark">
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
   <body>
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
+    
     <script>
       import "../scripts/menu";
     </script>
   </body>
 </html>
+
+<style>
+  main {
+    margin: 0 auto;
+  }
+</style>

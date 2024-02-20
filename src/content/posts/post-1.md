@@ -20,4 +20,4 @@ Welcome to my _new blog_ about learning Astro! I will share my learning journey 
 
 ## What's next
 
-I will finish the Atro tutorial, and then keep adding more posts. Watch this space!
+I will finish the Astro tutorial, and then keep adding more posts. Watch this space!
